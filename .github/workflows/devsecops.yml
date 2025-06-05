@@ -26,7 +26,7 @@ jobs:
       run: mvn org.owasp:dependency-check-maven:check
 
     - name: Docker Build
-      run: docker build -t sushma-0209-wiprodsc1:latest
+      run: docker build -t sushma-0209-wiprodsc1:latest .
 
     - name: Docker Scan
-      run: docker scan sushma-0209-wiprodsc1:latest 
+      run: docker scan sushma-0209-wiprodsc1:latest . 
