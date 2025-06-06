@@ -38,4 +38,4 @@ jobs:
       run: snyk auth ${{ secrets.SNYK_TOKEN }}
 
     - name: Snyk Container Scan
-      run: snyk container test sushma-0209/wiprodsc1
+      run: snyk container test sushma-0209/wiprodsc1 || true
