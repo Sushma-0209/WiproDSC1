@@ -24,9 +24,12 @@ jobs:
 
     - name: OWASP Dependency Check
       run: mvn org.owasp:dependency-check-maven:check
+      
+    - name: Rename JAR to app.jar
+      run: mv target/*.jar target/app.jar
 
     - name: Docker Build
-      run: docker build -t ${{ github.repository }} -f path/to/Dockerfile .
+      run: docker build -t ${{ github.repository }} .
 
     - name: Docker Scan
-      run: docker scan ${{ github.repository }} -f path/to/Dockerfile
+      run: docker scan ${{ github.repository }}
