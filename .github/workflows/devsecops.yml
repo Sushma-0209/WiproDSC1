@@ -31,5 +31,8 @@ jobs:
     - name: Docker Build
       run: docker build -t sushma-0209/wiprodsc1 .
 
-    - name: Docker Scan
-      run: docker scan sushma-0209/wiprodsc1
+    - name: Install Snyk
+      run: npm install -g snyk
+
+    - name: Snyk Container Scan
+      run: snyk container test sushma-0209/wiprodsc1
